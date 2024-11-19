@@ -20,11 +20,11 @@ function App() {
 
   return(
     <>
-      <Header 
+      {/* <Header 
         scrollToSkills={() => scrollToSection(skillRef)} 
-        scrollToPortfolio={() => scrollToSection(portfolioRef)} 
+        scrollToPortfolio={() => scrollToSection(portfolioRef)} `
         scrollToContact={() => scrollToSection(contactRef)} 
-      />
+      /> */}
       <section ref={contactRef}> <Home/> </section>
       <section ref={skillRef}> <SkillCards/> </section>
       <section ref={portfolioRef}> <PortfolioCard/> </section>
