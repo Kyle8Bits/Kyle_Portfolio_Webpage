@@ -18,7 +18,7 @@ const ProjectList = () => {
   const visible = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section className="py-20 bg-background px-6 md:px-12 lg:px-20 xl:px-48">
+    <section className="py-20 px-6 md:px-12 lg:px-20 xl:px-48">
       <motion.h2
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

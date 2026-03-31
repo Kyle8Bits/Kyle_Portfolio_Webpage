@@ -59,10 +59,20 @@ const Activity = () => {
     setHoveredIndex(null);
   };
 
+  const handleTap = (index: number) => {
+    if (hoveredIndex === index) {
+      pausedRef.current = false;
+      setHoveredIndex(null);
+    } else {
+      pausedRef.current = true;
+      setHoveredIndex(index);
+    }
+  };
+
   const allSlides = [...slides, ...slides, ...slides, ...slides];
 
   return (
-    <section id="activities" className="py-20 bg-background overflow-hidden">
+    <section id="activities" className="py-20 overflow-hidden">
       <motion.h2
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -84,6 +94,7 @@ const Activity = () => {
                 className="flex flex-col items-center w-[240px] sm:w-[300px] md:w-[400px] shrink-0 cursor-pointer"
                 onMouseEnter={() => handleMouseEnter(i)}
                 onMouseLeave={handleMouseLeave}
+                onTouchEnd={(e) => { e.preventDefault(); handleTap(i); }}
               >
                 <div className="relative w-full h-[280px] sm:h-[350px] md:h-[450px] rounded-xl overflow-hidden">
                   <img
@@ -96,14 +107,14 @@ const Activity = () => {
 
                   {/* Hover overlay */}
                   <div
-                    className={`absolute inset-0 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
+                    className={`absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 overflow-y-auto transition-opacity duration-300 ${
                       isHovered ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <h3 className="text-text text-sm sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-center">
+                    <h3 className="text-text text-sm sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-center shrink-0">
                       {slide.description}
                     </h3>
-                    <p className="text-text/80 text-xs sm:text-sm text-center leading-relaxed">
+                    <p className="text-text/80 text-xs sm:text-sm text-center leading-relaxed line-clamp-6 sm:line-clamp-none">
                       {slide.detail}
                     </p>
                   </div>

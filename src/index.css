@@ -5,3 +5,7 @@
   --color-background: #121e28;
   --color-text: #fafcfa;
 }
+
+body {
+  background-color: var(--color-background);
+}

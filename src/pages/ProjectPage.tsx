@@ -17,7 +17,7 @@ const ProjectPage = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center gap-4">
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <h1 className="text-3xl font-bold text-text">Project not found</h1>
         <Link to="/" className="text-primary hover:underline">
           Back to home
@@ -27,7 +27,7 @@ const ProjectPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background px-6 md:px-12 lg:px-20 xl:px-48 py-12">
+    <div className="min-h-screen px-6 md:px-12 lg:px-20 xl:px-48 py-12">
       <Link
         to="/"
         className="inline-flex items-center gap-2 text-text/50 hover:text-primary transition-colors mb-8"

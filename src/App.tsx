@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Lenis from "lenis";
 import Dashboard from "./pages/Dashboard";
 import ProjectPage from "./pages/ProjectPage";
+import FloatingShapes from "./components/FloatingShapes";
 
 function App() {
   useEffect(() => {
@@ -37,7 +38,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main className="bg-background text-text">
+      <FloatingShapes />
+      <main className="relative z-10 text-text">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/project/:slug" element={<ProjectPage />} />
