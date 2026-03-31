@@ -1,4 +1,4 @@
-import profileImg from "../assets/me/Khoa_Dev_PNG.png";
+import profileImg from "../assets/me/Khoa_DEV_PNG.png";
 import { motion } from "framer-motion";
 
 const navLinks = [
