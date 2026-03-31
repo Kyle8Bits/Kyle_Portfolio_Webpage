@@ -1,35 +1,49 @@
-import React, { useRef } from 'react';
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Lenis from "lenis";
+import Dashboard from "./pages/Dashboard";
+import ProjectPage from "./pages/ProjectPage";
 
-import Home from "./components/Home"
-import Header from "./components/Header";
-import SkillCards from "./components/SkillCards";
-import Footer from "./components/Footer";
-import PortfolioCard from "./components/PortfolioCard";
-
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis();
 
-  const contactRef = useRef<HTMLDivElement>(null);
-  const skillRef = useRef<HTMLDivElement>(null);
-  const portfolioRef = useRef<HTMLDivElement>(null);
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-  
+    requestAnimationFrame(raf);
 
-  return(
-    <>
-      {/* <Header 
-        scrollToSkills={() => scrollToSection(skillRef)} 
-        scrollToPortfolio={() => scrollToSection(portfolioRef)} `
-        scrollToContact={() => scrollToSection(contactRef)} 
-      /> */}
-      <section ref={contactRef}> <Home/> </section>
-      <section ref={skillRef}> <SkillCards/> </section>
-      <section ref={portfolioRef}> <PortfolioCard/> </section>
-      <Footer/>
-    </>
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (!anchor) return;
+
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        lenis.scrollTo(href, { offset: -40 });
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    return () => {
+      document.removeEventListener("click", handleAnchorClick);
+      lenis.destroy();
+    };
+  }, []);
+
+  return (
+    <BrowserRouter>
+      <main className="bg-background text-text">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/project/:slug" element={<ProjectPage />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

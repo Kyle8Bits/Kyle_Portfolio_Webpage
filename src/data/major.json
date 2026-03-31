@@ -1,0 +1,29 @@
+[
+  {
+    "title": "AgentShield - Every tool call, verified",
+    "description": "AgentShield is a self-evolving security gateway that sits between your AI agent and the tools it calls. Every time an agent tries to execute an action - reading a file, calling an API, sending a message, running a command - AgentShield intercepts the request, scores its risk, and decides what happens next.",
+    "image": "agent_shield.png",
+    "tags": ["React", "Node.js", "MCP Proxy", "Qwen LLM", "Codex", "Tiny Fish"],
+    "builtFor": "Hackathon",
+    "event": "LotusHack 2026",
+    "achievement": "1st Place - Best use of Qwen"
+  },
+  {
+    "title": "SnapClaim - Faster,smarter claim submissions",
+    "description": "SnapClaim, transforms the insurance claims process by introducing a collaborative AI agent that not only helps users submit claims but also ensures transparency and context throughout the process.",
+    "image": "snap_claim.png",
+    "tags": ["React", "Spring Boot", "OCR", "OpenAI"],
+    "builtFor": "Hackathon",
+    "event": "CoverGo AI Hackathon",
+    "achievement": "Champion"
+  },
+  {
+    "title": "Kyky's Street",
+    "description": "After losing his mother in a tragic traffic accident, Kyky sets out on a dangerous journey to find a new family. Along the way, he meets other young souls who were also torn apart by unsafe roads. Together, they navigate Vietnam’s traffic challenges and your choices will determine whether they survive the journey and find the family they long for.",
+    "image": "kyky_street.png",
+    "tags": ["XCode", "Swift", "Firebase", "Google SDK"],
+    "builtFor": "Course Project",
+    "event": "Project Showcase at RMIT Experience Day 2025",
+    "achievement": "Showcase Best Project"
+  }
+]

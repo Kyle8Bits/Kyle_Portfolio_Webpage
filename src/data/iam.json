@@ -1,0 +1,20 @@
+[
+  {
+    "src": "Khoa_NEO.JPG",
+    "alt": "Neo",
+    "description": "RMIT Neo Culture Tech - Software Manager",
+    "detail": "RMIT Neo Culture Tech is a community fueled by the passion for technology and innovations. Our club offers not only a playground for tech-enthusiasts but also a unique learning experience for all students. "
+  },
+  {
+    "src": "Khoa_SAT.jpg",
+    "alt": "SAT",
+    "description": "RMIT Student Ambassador Team - Coordinator of Group 5",
+    "detail": "Core team member involved in planning, coordinating, and delivering major events at RMIT University."
+  },
+  {
+    "src": "Khoa_Student.JPG",
+    "alt": "Student",
+    "description": "Software Engineering Student at RMIT",
+    "detail": "Passionate engineering student with a strong interest in social activities, hackathons, and technology research."
+  }
+]
